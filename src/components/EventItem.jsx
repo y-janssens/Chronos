@@ -1,7 +1,7 @@
 import { useCallback, useState, useMemo } from "react";
 import { observer } from "mobx-react";
 import { state } from "../state";
-import css from "../pages/styles.module.css";
+import css from "../style/styles.module.css";
 import ItemDetails from "./ItemDetails";
 import ItemHover from "./ItemHover";
 

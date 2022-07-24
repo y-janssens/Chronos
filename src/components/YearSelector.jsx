@@ -1,9 +1,9 @@
 import { useState, useCallback } from "react";
 import { observer } from "mobx-react";
 import { state } from "../state";
-import css from "../pages/styles.module.css";
+import css from "../style/styles.module.css";
 
-const Header = observer(() => {
+const YearSelector = observer(() => {
   const { availableYears } = state;
   const [selected, setSelected] = useState(1164);
 
@@ -11,6 +11,7 @@ const Header = observer(() => {
     (item) => {
       setSelected(item);
       state.setSelectedYear(item);
+      state.setSelectedItem([]);
     },
     [selected]
   );
@@ -42,4 +43,4 @@ const Header = observer(() => {
     </div>
   );
 });
-export default Header;
+export default YearSelector;

@@ -1,4 +1,4 @@
-import css from "../pages/styles.module.css";
+import css from "../style/styles.module.css";
 
 function ItemHover({ color }) {
   return (

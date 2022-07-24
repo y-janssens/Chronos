@@ -1,8 +1,8 @@
-import Timeline from "./pages/Timeline";
+import Home from "./pages/Home";
 import "./index.css";
 
 function App() {
-  return <Timeline />;
+  return <Home />;
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import css from "../pages/styles.module.css";
+import css from "../style/styles.module.css";
 
 function ItemDetails({ item }) {
   const date = useMemo(() => {
@@ -12,11 +12,11 @@ function ItemDetails({ item }) {
 
   const details = useMemo(() => {
     if (item.details.length < 1) {
-      return;
+      return null;
     }
     return (
       <div className={css["event-hover-content-details"]}>
-        <p>Détails supplémentaires</p>
+        <div className={css["event-hover-title"]}>Détails supplémentaires</div>
         {item.details}
       </div>
     );
@@ -24,28 +24,47 @@ function ItemDetails({ item }) {
 
   const consequences = useMemo(() => {
     if (item.consequences.length < 1) {
-      return;
+      return null;
     }
     return (
       <div className={css["event-hover-content-details"]}>
-        <p>Conséquences</p>
+        <div className={css["event-hover-title"]}>Conséquences</div>
         {item.consequences}
       </div>
     );
   }, [item]);
 
-  const additional = useMemo(() => {}, [item, details, consequences]);
+  const links = useMemo(() => {
+    if (item.links.length < 1) {
+      return null;
+    }
+    return (
+      <div className={css["event-hover-content-details"]}>
+        <div className={css["event-hover-title"]}>Liens utiles</div>
+        <ul>
+          {item.links.map((link) => {
+            return (
+              <li key={link.id}>
+                <a href={link.text}>{link.name}</a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  }, [item]);
 
   return (
     <div className={css["event-hover"]}>
       <div className={`${css["event-hover-title"]} ${css["date"]}`}>{date}</div>
-      <div className={css["event-hover-title"]}>{item.title}</div>
+      <div className={css["event-hover-title"]}>{`◈ ${item.title} ◈`}</div>
       <div className={css["event-hover-content"]}>
         <div className={css["event-hover-content-details"]}>
           {item.description}
         </div>
         {details}
         {consequences}
+        {links}
       </div>
     </div>
   );

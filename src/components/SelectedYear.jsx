@@ -1,11 +1,11 @@
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import { observer } from "mobx-react";
 import { state } from "../state";
-import css from "../pages/styles.module.css";
+import css from "../style/styles.module.css";
 import EventItem from "./EventItem";
 
 const SelectedYear = observer(() => {
-  const { events, selectedYear } = state;
+  const { events, selectedYear, selectedItem } = state;
 
   const year = useMemo(() => {
     const items = [];
@@ -16,9 +16,14 @@ const SelectedYear = observer(() => {
         items.push(item);
       }
     });
-    state.setSelectedItem(items[1]);
     return items;
-  }, [events, selectedYear]);
+  }, [events, selectedYear, selectedItem]);
+
+  useEffect(() => {
+    if (year.length > 1 && selectedItem.length < 1) {
+      state.setSelectedItem(year[1]);
+    }
+  }, [year, selectedYear]);
 
   return (
     <div className={css["years-container"]}>

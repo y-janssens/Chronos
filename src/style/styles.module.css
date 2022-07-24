@@ -22,10 +22,10 @@
   align-items: center;
   justify-content: center;
   height: 40px;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   font-family: Bilbo Swash Caps;
   font-variant: small-caps;
-  font-size: 18px;
+  font-size: 20px;
   font-style: normal;
   color: #796244;
   margin-bottom: 20px;
@@ -86,7 +86,7 @@
 .event-hover {
   position: fixed;
   top: 115px;
-  width: 75%;
+  width: 85%;
   text-align: justify;
   font-size: 13px;
   color: #938471;
@@ -96,22 +96,29 @@
   position: relative;
   text-align: center;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 15px;
+}
+
+.event-hover-link {
+  position: relative;
+  margin-right: 25px;
 }
 
 .date {
   font-size: 14px;
   margin-bottom: 2px;
+  color: #9966ff;
 }
 
 .event-hover-content {
-  height: 315px;
+  height: 300px;
   overflow-y: auto;
 }
 
 .event-hover-content-details {
   margin-bottom: 10px;
+  line-height: 20px;
 }
 
 /* Hover functions */
@@ -136,7 +143,6 @@
   border-radius: 50%;
   width: 15px;
   height: 15px;
-  z-index: 20;
 }
 
 .item-hover-handle {
@@ -145,5 +151,4 @@
   height: 35px;
   left: 5px;
   top: -2px;
-  z-index: 1;
 }
