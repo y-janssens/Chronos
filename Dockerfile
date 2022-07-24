@@ -1,16 +1,22 @@
-FROM node:latest as build
+# pull official base image
+FROM node:18.4-alpine AS builder
+ENV NOVE_ENV production
+
+# set working directory
 WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm ci --silent
-RUN npm install react-scripts@3.4.1 -g --silent
-COPY . ./
+
+COPY package.json .
+COPY package-lock.json .
+
+RUN npm install
+
+COPY . .
+
 RUN npm run build
 
 # production environment
 FROM nginx:stable-alpine
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
 # new
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80

@@ -3,10 +3,10 @@ version: '3.7'
 services:
 
   sample-prod:
-    container_name: sample-prod
+    container_name: slash-web-1
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
     ports:
       - '1337:80'
 networks:
