@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback } from "react";
+import { useMemo } from "react";
 import { observer } from "mobx-react";
 import { state } from "../state";
 import css from "../pages/styles.module.css";
@@ -6,28 +6,19 @@ import EventItem from "./EventItem";
 
 const SelectedYear = observer(() => {
   const { events, selectedYear } = state;
-  const [selected, setSelected] = useState();
 
   const year = useMemo(() => {
     const items = [];
     events.map((item) => {
-      if (item.year === selectedYear) {
+      if (item.name === 0) {
+        items.push(item);
+      } else if (item.year === selectedYear) {
         items.push(item);
       }
     });
+    state.setSelectedItem(items[1]);
     return items;
   }, [events, selectedYear]);
-
-  //   const handleSelect = useCallback((item) => {
-  //     console.log(item);
-  //   }, []);
-
-  //   const handleSelect = useCallback(
-  //     (e) => {
-  //       console.log(e);
-  //     },
-  //     [selected]
-  //   );
 
   return (
     <div className={css["years-container"]}>

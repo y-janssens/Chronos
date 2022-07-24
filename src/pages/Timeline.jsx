@@ -1,5 +1,4 @@
 import { observer } from "mobx-react";
-import { state } from "../state";
 import Header from "../components/Header";
 import css from "./styles.module.css";
 import SelectedYear from "../components/SelectedYear";

@@ -3,15 +3,34 @@
   top: 50%;
   left: 50%;
   width: 700px;
-  height: 350px;
+  height: auto;
+  min-height: 550px;
+  border-radius: 10px;
+  margin-bottom: 30px;
   transform: translate(-50%, -50%);
+  background-color: #303030;
+  overflow: hidden;
+  background-image: url(https://www.marbrume.com/static/images/yNoKK6g.png);
   box-shadow: rgb(0 0 0 / 12%) 0px 13px 15px -5px,
     rgb(0 0 0 / 35%) 0px 8px 8px -5px;
 }
 
 .timeline-header {
-  text-align: center;
-  margin: 10px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  letter-spacing: 1.5px;
+  font-family: Bilbo Swash Caps;
+  font-variant: small-caps;
+  font-size: 18px;
+  font-style: normal;
+  color: #796244;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #000000;
+  background-color: rgba(41, 33, 28, 0.7);
 }
 
 .slots-container {
@@ -30,9 +49,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px;
   background-color: #0076b8;
   color: #fff;
   cursor: pointer;
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
 }
 
 .slot-first {
@@ -46,7 +67,7 @@
 .years-container {
   position: absolute;
   width: 100%;
-  bottom: 75px;
+  bottom: 35px;
   display: flex;
   justify-content: center;
 }
@@ -59,6 +80,38 @@
 
 .year-item {
   font-size: 12px;
+  padding: 0;
+}
+
+.event-hover {
+  position: fixed;
+  top: 115px;
+  width: 75%;
+  text-align: justify;
+  font-size: 13px;
+  color: #938471;
+}
+
+.event-hover-title {
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.date {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.event-hover-content {
+  height: 315px;
+  overflow-y: auto;
+}
+
+.event-hover-content-details {
+  margin-bottom: 10px;
 }
 
 /* Hover functions */
@@ -75,4 +128,22 @@
 
 .slot-last:hover {
   border-radius: 5px 20px 20px 5px !important;
+}
+
+.item-hover {
+  position: absolute;
+  top: -45px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  z-index: 20;
+}
+
+.item-hover-handle {
+  position: relative;
+  width: 4px;
+  height: 35px;
+  left: 5px;
+  top: -2px;
+  z-index: 1;
 }
