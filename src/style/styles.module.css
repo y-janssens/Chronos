@@ -1,154 +1,153 @@
 .timeline-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 700px;
-  height: auto;
-  min-height: 550px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  transform: translate(-50%, -50%);
-  background-color: #303030;
-  overflow: hidden;
-  background-image: url(https://www.marbrume.com/static/images/yNoKK6g.png);
-  box-shadow: rgb(0 0 0 / 12%) 0px 13px 15px -5px,
-    rgb(0 0 0 / 35%) 0px 8px 8px -5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: auto;
+    min-height: 550px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    transform: translate(-50%, -50%);
+    background-color: #303030;
+    overflow: hidden;
+    background-image: url(https://www.marbrume.com/static/images/yNoKK6g.png);
+    box-shadow: rgb(0 0 0 / 12%) 0px 13px 15px -5px, rgb(0 0 0 / 35%) 0px 8px 8px -5px;
 }
 
 .timeline-header {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  letter-spacing: 2px;
-  font-family: Bilbo Swash Caps;
-  font-variant: small-caps;
-  font-size: 20px;
-  font-style: normal;
-  color: #796244;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #000000;
-  background-color: rgba(41, 33, 28, 0.7);
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    letter-spacing: 2px;
+    font-family: Bilbo Swash Caps;
+    font-variant: small-caps;
+    font-size: 20px;
+    font-style: normal;
+    color: #796244;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000000;
+    background-color: rgba(41, 33, 28, 0.7);
 }
 
 .slots-container {
-  position: relative;
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .timeline-slot {
-  position: relative;
-  width: 100px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  background-color: #0076b8;
-  color: #fff;
-  cursor: pointer;
-  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+    position: relative;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #0076b8;
+    color: #fff;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
 }
 
 .slot-first {
-  border-radius: 20px 0 0 20px;
+    border-radius: 10px 0 0 10px;
 }
 
 .slot-last {
-  border-radius: 0 20px 20px 0;
+    border-radius: 0 10px 10px 0;
 }
 
 .years-container {
-  position: absolute;
-  width: 100%;
-  bottom: 35px;
-  display: flex;
-  justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 35px;
+    display: flex;
+    justify-content: center;
 }
 
 .year-items-container {
-  width: 90%;
-  display: flex;
-  justify-content: center;
+    width: 90%;
+    display: flex;
+    justify-content: center;
 }
 
 .year-item {
-  font-size: 12px;
-  padding: 0;
+    font-size: 12px;
+    padding: 0;
 }
 
 .event-hover {
-  position: fixed;
-  top: 115px;
-  width: 85%;
-  text-align: justify;
-  font-size: 13px;
-  color: #938471;
+    position: fixed;
+    top: 115px;
+    width: 85%;
+    text-align: justify;
+    font-size: 13px;
+    color: #938471;
 }
 
 .event-hover-title {
-  position: relative;
-  text-align: center;
-  font-weight: 700;
-  font-size: 15px;
-  margin-bottom: 15px;
+    position: relative;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 15px;
 }
 
 .event-hover-link {
-  position: relative;
-  margin-right: 25px;
+    position: relative;
+    margin-right: 25px;
 }
 
 .date {
-  font-size: 14px;
-  margin-bottom: 2px;
-  color: #9966ff;
+    font-size: 14px;
+    margin-bottom: 2px;
+    color: #9966ff;
 }
 
 .event-hover-content {
-  height: 300px;
-  overflow-y: auto;
+    height: 300px;
+    overflow-y: auto;
 }
 
 .event-hover-content-details {
-  margin-bottom: 10px;
-  line-height: 20px;
+    margin-bottom: 10px;
+    line-height: 20px;
 }
 
 /* Hover functions */
 
 .timeline-slot:hover {
-  transform: scale(1.1);
-  z-index: 5;
-  border-radius: 5px 5px 5px 5px;
+    transform: scale(1.1);
+    z-index: 5;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .slot-first:hover {
-  border-radius: 20px 5px 5px 20px !important;
+    border-radius: 10px 5px 5px 10px !important;
 }
 
 .slot-last:hover {
-  border-radius: 5px 20px 20px 5px !important;
+    border-radius: 5px 10px 10px 5px !important;
 }
 
 .item-hover {
-  position: absolute;
-  top: -45px;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
+    position: absolute;
+    top: -45px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
 }
 
 .item-hover-handle {
-  position: relative;
-  width: 4px;
-  height: 35px;
-  left: 5px;
-  top: -2px;
+    position: relative;
+    width: 4px;
+    height: 35px;
+    left: 5px;
+    top: 12px;
 }
