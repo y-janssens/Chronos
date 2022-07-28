@@ -99,6 +99,23 @@
     margin-bottom: 15px;
 }
 
+.event-hover-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.event-hover-links span {
+    margin: 0 15px 15px 15px;
+    cursor: pointer;
+}
+
+.event-hover-links span:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #bba888;
+}
+
 .event-hover-link {
     position: relative;
     margin-right: 25px;
@@ -111,7 +128,7 @@
 }
 
 .event-hover-content {
-    height: 300px;
+    height: 265px;
     overflow-y: auto;
 }
 
