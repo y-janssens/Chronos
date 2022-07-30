@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   sample-prod:
-    container_name: slash-web-1
+    container_name: chronos-web-1
     build:
       context: .
       dockerfile: Dockerfile.prod
