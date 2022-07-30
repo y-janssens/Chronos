@@ -6,7 +6,6 @@
     height: auto;
     min-height: 550px;
     border-radius: 10px;
-    margin-bottom: 30px;
     transform: translate(-50%, -50%);
     background-color: #303030;
     overflow: hidden;
@@ -89,6 +88,19 @@
     text-align: justify;
     font-size: 13px;
     color: #938471;
+}
+
+.item-hover-background {
+    position: fixed;
+    top: 115px;
+    width: 85%;
+    height: 64%;
+    background: url('./blason.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.05;
+    pointer-events: none;
 }
 
 .item-hover-title {

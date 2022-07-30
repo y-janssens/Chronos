@@ -71,6 +71,7 @@ function ItemDetails({ item }) {
 
     return (
         <div className={css['item-hover']}>
+            <div className={css['item-hover-background']}></div>
             <div className={`${css['item-hover-title']} ${css['date']}`}>{date}</div>
             <div className={css['item-hover-title']}>{`◈ ${item.title} ◈`}</div>
             <div className={css['item-hover-links']}>{links}</div>
