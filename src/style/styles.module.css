@@ -82,7 +82,7 @@
     padding: 0;
 }
 
-.event-hover {
+.item-hover {
     position: fixed;
     top: 115px;
     width: 85%;
@@ -91,7 +91,7 @@
     color: #938471;
 }
 
-.event-hover-title {
+.item-hover-title {
     position: relative;
     text-align: center;
     font-weight: 700;
@@ -99,24 +99,24 @@
     margin-bottom: 15px;
 }
 
-.event-hover-links {
+.item-hover-links {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.event-hover-links span {
+.item-hover-links span {
     margin: 0 15px 15px 15px;
     cursor: pointer;
 }
 
-.event-hover-links span:hover {
+.item-hover-links span:hover {
     text-decoration: underline;
     text-underline-offset: 2px;
     color: #bba888;
 }
 
-.event-hover-link {
+.item-hover-link {
     position: relative;
     margin-right: 25px;
 }
@@ -127,14 +127,14 @@
     color: #9966ff;
 }
 
-.event-hover-content {
+.item-hover-content {
     height: 265px;
     overflow-y: auto;
 }
 
-.event-hover-content-details {
+.item-hover-content-details {
     margin-bottom: 10px;
-    line-height: 20px;
+    line-height: 25px;
 }
 
 /* Hover functions */
@@ -151,20 +151,4 @@
 
 .slot-last:hover {
     border-radius: 5px 10px 10px 5px !important;
-}
-
-.item-hover {
-    position: absolute;
-    top: -45px;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-}
-
-.item-hover-handle {
-    position: relative;
-    width: 4px;
-    height: 35px;
-    left: 5px;
-    top: 12px;
 }

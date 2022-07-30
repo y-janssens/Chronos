@@ -1,13 +1,11 @@
-import { useCallback, useState, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { observer } from 'mobx-react';
 import { state } from '../state';
 import css from '../style/styles.module.css';
 import ItemDetails from './ItemDetails';
-import ItemHover from './ItemHover';
 
 const EventItem = observer(({ year, item, index }) => {
     const { selectedItem, colors, selectedColor } = state;
-    const [show, setShow] = useState(false);
 
     const selected = useMemo(() => {
         const selection = selectedItem.id === item.id;
@@ -29,13 +27,6 @@ const EventItem = observer(({ year, item, index }) => {
         return selected ? selectedColor : colors[index];
     }, [index, colors, selected, selectedColor]);
 
-    const popupToggle = useMemo(() => {
-        if (!show) {
-            return null;
-        }
-        return <ItemHover item={item} color={color} />;
-    }, [show, color, item]);
-
     const style = useMemo(() => {
         if (index === 0) {
             return `${css['timeline-slot']} ${css['slot-first']} ${css['year-item']}`;
@@ -48,9 +39,8 @@ const EventItem = observer(({ year, item, index }) => {
 
     return (
         <>
-            <div onClick={handleSelect} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} style={{ backgroundColor: color }} className={style}>
+            <div onClick={handleSelect} style={{ backgroundColor: color }} className={style}>
                 {item.date}
-                {popupToggle}
             </div>
             {focusItem}
         </>
