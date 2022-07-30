@@ -124,7 +124,7 @@
 .date {
     font-size: 14px;
     margin-bottom: 2px;
-    color: #9966ff;
+    color: #af7f42;
 }
 
 .item-hover-content {
@@ -134,7 +134,8 @@
 
 .item-hover-content-details {
     margin-bottom: 10px;
-    line-height: 25px;
+    line-height: 20px;
+    white-space: pre-wrap;
 }
 
 /* Hover functions */

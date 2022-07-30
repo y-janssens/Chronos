@@ -44,7 +44,7 @@ function ItemDetails({ item }) {
             if (item.consequences.length < 1) {
                 return null;
             }
-            return <div className={css['item-hover-content-details']}>{item.consequences}</div>;
+            return <div className={css['item-hover-content-details']}>{item?.consequences}</div>;
         }
 
         if (selected === 'links') {
