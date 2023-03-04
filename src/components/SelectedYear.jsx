@@ -1,11 +1,9 @@
 import { useMemo, useEffect } from 'react';
-import { observer } from 'mobx-react';
-import { state } from '../state';
-import css from '../style/styles.module.css';
+import css from '../styles/styles.module.css';
 import EventItem from './EventItem';
 
-const SelectedYear = observer(() => {
-    const { events, selectedYear, selectedItem } = state;
+const SelectedYear = ({ form, setForm }) => {
+    const { events, selectedYear, selectedItem } = form;
 
     const year = useMemo(() => {
         const items = [];
@@ -22,19 +20,18 @@ const SelectedYear = observer(() => {
 
     useEffect(() => {
         if (year.length > 1 && selectedItem.length < 1) {
-            state.setSelectedItem(year[1]);
+            setForm('selectedItem', year[1]);
         }
-    }, [year, selectedYear, selectedItem]);
+    }, [year, setForm, selectedItem]);
 
     return (
         <div className={css['years-container']}>
             <div className={css['year-items-container']}>
                 {year.map((item, index) => {
-                    return <EventItem key={item.id} year={year} item={item} index={index} />;
+                    return <EventItem key={item.id} form={form} setForm={setForm} year={year} item={item} index={index} />;
                 })}
             </div>
         </div>
     );
-});
-
+};
 export default SelectedYear;

@@ -1,15 +1,14 @@
 import { useMemo, useState } from 'react';
-import css from '../style/styles.module.css';
+import css from '../styles/styles.module.css';
 
 function ItemDetails({ item }) {
     const [selected, setSelected] = useState(Object.keys(item)[5]);
 
     const date = useMemo(() => {
-        if (item.name === 0) {
-            return `- ${item.date} -`;
-        } else {
+        if (!item.name === 0) {
             return `- ${item.date} ${item.year} -`;
         }
+        return `- ${item.date} -`;
     }, [item]);
 
     const links = useMemo(() => {

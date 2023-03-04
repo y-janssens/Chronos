@@ -1,19 +1,16 @@
 import { useCallback, useMemo } from 'react';
-import { observer } from 'mobx-react';
-import { state } from '../state';
-import css from '../style/styles.module.css';
+import css from '../styles/styles.module.css';
 import ItemDetails from './ItemDetails';
 
-const EventItem = observer(({ year, item, index }) => {
-    const { selectedItem, colors, selectedColor } = state;
+const EventItem = ({ year, form, setForm, item, index }) => {
+    const { selectedItem, colors, selectedColor } = form;
 
     const selected = useMemo(() => {
-        const selection = selectedItem.id === item.id;
-        return selection;
+        return selectedItem.id === item.id;
     }, [selectedItem, item]);
 
     const handleSelect = useCallback(() => {
-        state.setSelectedItem(item);
+        setForm('selectedItem', item);
     }, [item]);
 
     const focusItem = useMemo(() => {
@@ -45,5 +42,5 @@ const EventItem = observer(({ year, item, index }) => {
             {focusItem}
         </>
     );
-});
+};
 export default EventItem;

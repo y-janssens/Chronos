@@ -1,25 +1,23 @@
-import { useState, useCallback } from 'react';
-import { observer } from 'mobx-react';
-import { state } from '../state';
+import { useCallback } from 'react';
 import YearItem from './YearItem';
-import css from '../style/styles.module.css';
+import css from '../styles/styles.module.css';
 
-const YearSelector = observer(() => {
-    const { availableYears } = state;
-    const [selected, setSelected] = useState(1164);
+const YearSelector = ({ form, setForm }) => {
+    const { availableYears, selectedYear } = form;
 
-    const handleSelect = useCallback((item) => {
-        setSelected(item);
-        state.setSelectedYear(item);
-        state.setSelectedItem([]);
-    }, []);
+    const handleSelect = useCallback(
+        (item) => {
+            setForm({ ...form, selectedYear: item, selectedItem: [] });
+        },
+        [setForm, form]
+    );
 
     return (
         <div className={css['slots-container']}>
             {availableYears.map((item, index) => {
-                return <YearItem key={index} item={item} index={index} handleSelect={handleSelect} selectedItem={selected} />;
+                return <YearItem key={index} form={form} item={item} index={index} handleSelect={handleSelect} selectedItem={selectedYear} />;
             })}
         </div>
     );
-});
+};
 export default YearSelector;

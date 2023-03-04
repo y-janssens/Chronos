@@ -1,14 +1,11 @@
 import { useMemo } from 'react';
-import { observer } from 'mobx-react';
-import { state } from '../state';
-import css from '../style/styles.module.css';
+import css from '../styles/styles.module.css';
 
-const YearItem = observer(({ item, index, handleSelect, selectedItem }) => {
-    const { colors, availableYears, selectedColor } = state;
+const YearItem = ({ item, form, index, handleSelect, selectedItem }) => {
+    const { colors, availableYears, selectedColor } = form;
 
     const selected = useMemo(() => {
-        const selection = selectedItem === item;
-        return selection;
+        return selectedItem === item;
     }, [selectedItem, item]);
 
     const color = useMemo(() => {
@@ -31,5 +28,5 @@ const YearItem = observer(({ item, index, handleSelect, selectedItem }) => {
             {item}
         </div>
     );
-});
+};
 export default YearItem;

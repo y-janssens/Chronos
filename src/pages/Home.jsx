@@ -1,15 +1,17 @@
-import { observer } from 'mobx-react';
 import YearSelector from '../components/YearSelector';
-import css from '../style/styles.module.css';
 import SelectedYear from '../components/SelectedYear';
+import Loader from '../components/Loader';
+import css from '../styles/styles.module.css';
 
-const Home = observer(() => {
+const Home = ({ form, setForm, setFormObject, loading, errors }) => {
     return (
         <div className={css['timeline-container']}>
             <div className={css['timeline-header']}>Chronologie Générale</div>
-            <YearSelector />
-            <SelectedYear />
+            <Loader loading={loading}>
+                <YearSelector form={form} setForm={setFormObject} />
+                <SelectedYear form={form} setForm={setForm} />
+            </Loader>
         </div>
     );
-});
+};
 export default Home;

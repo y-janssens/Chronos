@@ -1,8 +1,8 @@
-import Home from "./pages/Home";
-import "./index.css";
+import Context from './pages/Context';
+import './index.css';
 
 function App() {
-  return <Home />;
+    return <Context />;
 }
 
 export default App;
