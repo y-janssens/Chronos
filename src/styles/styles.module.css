@@ -96,7 +96,7 @@
     top: 115px;
     width: 85%;
     height: 64%;
-    background: url('./blason.png');
+    background: url('../static/blason.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

@@ -1,16 +1,17 @@
 import { useMemo } from 'react';
-import css from '../styles/styles.module.css';
+import css from '../../styles/styles.module.css';
 
-const YearItem = ({ item, form, index, handleSelect, selectedItem }) => {
-    const { colors, availableYears, selectedColor } = form;
-
+export default function YearItem({ item, form, index, handleSelect, selectedItem }) {
     const selected = useMemo(() => {
         return selectedItem === item;
     }, [selectedItem, item]);
 
     const color = useMemo(() => {
-        return selected ? selectedColor : colors[index];
-    }, [index, colors, selected, selectedColor]);
+        if (!selected) {
+            return form.colors[index];
+        }
+        return form.selectedColor;
+    }, [index, form, selected]);
 
     return (
         <div
@@ -20,7 +21,7 @@ const YearItem = ({ item, form, index, handleSelect, selectedItem }) => {
             className={
                 index === 0
                     ? `${css['timeline-slot']} ${css['slot-first']}`
-                    : index === availableYears.length - 1
+                    : index === form.availableYears.length - 1
                     ? `${css['timeline-slot']} ${css['slot-last']}`
                     : css['timeline-slot']
             }
@@ -28,5 +29,4 @@ const YearItem = ({ item, form, index, handleSelect, selectedItem }) => {
             {item}
         </div>
     );
-};
-export default YearItem;
+}

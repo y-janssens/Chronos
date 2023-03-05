@@ -36,4 +36,4 @@ const useFetch = ({ launch = true, onSuccess = () => {} }) => {
     return [data, loading, errors];
 };
 
-export { useFetch, proxy };
+export { useFetch };

@@ -1,17 +1,15 @@
 import { useCallback, useMemo } from 'react';
-import css from '../styles/styles.module.css';
 import ItemDetails from './ItemDetails';
+import css from '../../styles/styles.module.css';
 
-const EventItem = ({ year, form, setForm, item, index }) => {
-    const { selectedItem, colors, selectedColor } = form;
-
+export default function EventItem({ year, form, setForm, item, index }) {
     const selected = useMemo(() => {
-        return selectedItem.id === item.id;
-    }, [selectedItem, item]);
+        return form.selectedItem.id === item.id;
+    }, [form, item]);
 
     const handleSelect = useCallback(() => {
         setForm('selectedItem', item);
-    }, [item]);
+    }, [setForm, item]);
 
     const focusItem = useMemo(() => {
         if (!selected) {
@@ -21,8 +19,11 @@ const EventItem = ({ year, form, setForm, item, index }) => {
     }, [item, selected]);
 
     const color = useMemo(() => {
-        return selected ? selectedColor : colors[index];
-    }, [index, colors, selected, selectedColor]);
+        if (!selected) {
+            return form.colors[index];
+        }
+        return form.selectedColor;
+    }, [index, form, selected]);
 
     const style = useMemo(() => {
         if (index === 0) {
@@ -42,5 +43,4 @@ const EventItem = ({ year, form, setForm, item, index }) => {
             {focusItem}
         </>
     );
-};
-export default EventItem;
+}

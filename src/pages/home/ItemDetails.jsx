@@ -1,11 +1,11 @@
 import { useMemo, useState } from 'react';
-import css from '../styles/styles.module.css';
+import css from '../../styles/styles.module.css';
 
-function ItemDetails({ item }) {
-    const [selected, setSelected] = useState(Object.keys(item)[5]);
+export default function ItemDetails({ item }) {
+    const [selected, setSelected] = useState(Object.keys(item)[4]);
 
     const date = useMemo(() => {
-        if (!item.name === 0) {
+        if (!item.origin) {
             return `- ${item.date} ${item.year} -`;
         }
         return `- ${item.date} -`;
@@ -78,5 +78,3 @@ function ItemDetails({ item }) {
         </div>
     );
 }
-
-export default ItemDetails;
